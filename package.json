@@ -1,0 +1,149 @@
+{
+  "name": "resourcex",
+  "displayName": "ResourceX",
+  "description": "Remote code execution platform integration for VS Code",
+  "version": "0.0.1",
+  "engines": {
+    "vscode": "^1.74.0"
+  },
+  "categories": [
+    "Other"
+  ],
+  "activationEvents": [
+    "onCommand:resourcex.checkAuth",
+    "onCommand:resourcex.login",
+    "onCommand:resourcex.enterToken",
+    "onCommand:resourcex.executeCode",
+    "onCommand:resourcex.createSession",
+    "onCommand:resourcex.getResults",
+    "onCommand:resourcex.viewAvailableDevices"
+  ],
+  "main": "./out/extension.js",
+  "contributes": {
+    "commands": [
+      {
+        "command": "resourcex.checkAuth",
+        "title": "🔍 Check Authentication Status",
+        "category": "ResourceX"
+      },
+      {
+        "command": "resourcex.login",
+        "title": "🔐 Login to ResourceX",
+        "category": "ResourceX"
+      },
+      {
+        "command": "resourcex.enterToken",
+        "title": "🔑 Enter Auth Token",
+        "category": "ResourceX"
+      },
+      {
+        "command": "resourcex.logout",
+        "title": "🚪 Logout",
+        "category": "ResourceX"
+      },
+      {
+        "command": "resourcex.openLogin",
+        "title": "🌐 Open Login Page",
+        "category": "ResourceX"
+      },
+      {
+        "command": "resourcex.tokenInstructions",
+        "title": "❓ How to Get Auth Token",
+        "category": "ResourceX"
+      },
+      {
+        "command": "resourcex.executeCode",
+        "title": "▶️ Execute Code on Remote Device",
+        "category": "ResourceX"
+      },
+      {
+        "command": "resourcex.createSession",
+        "title": "➕ Create New Session",
+        "category": "ResourceX"
+      },
+      {
+        "command": "resourcex.selectSession",
+        "title": "📋 Select Active Session",
+        "category": "ResourceX"
+      },
+      {
+        "command": "resourcex.getResults",
+        "title": "📄 Get Execution Results",
+        "category": "ResourceX"
+      },
+      {
+        "command": "resourcex.viewSessions",
+        "title": "📊 View My Sessions",
+        "category": "ResourceX"
+      },
+      {
+        "command": "resourcex.securityAnalysis",
+        "title": "🔒 View Security Analysis",
+        "category": "ResourceX"
+      },
+      {
+        "command": "resourcex.viewAvailableDevices",
+        "title": "🖥️ View Available Devices",
+        "category": "ResourceX"
+      }
+    ],
+    "menus": {
+      "editor/context": [
+        {
+          "command": "resourcex.executeCode",
+          "when": "editorTextFocus",
+          "group": "resourcex"
+        }
+      ],
+      "editor/title": [
+        {
+          "command": "resourcex.executeCode",
+          "when": "resourceText",
+          "group": "navigation"
+        }
+      ]
+    },
+    "configuration": {
+      "title": "ResourceX",
+      "properties": {
+        "resourcex.apiUrl": {
+          "type": "string",
+          "default": "http://localhost:5002",
+          "description": "ResourceX API base URL"
+        },
+        "resourcex.autoSaveResults": {
+          "type": "boolean",
+          "default": true,
+          "description": "Automatically save execution results to files"
+        },
+        "resourcex.defaultRequirements": {
+          "type": "string",
+          "default": "numpy\npandas\nscikit-learn\nmatplotlib\n",
+          "description": "Default Python requirements for code execution"
+        }
+      }
+    }
+  },
+  "scripts": {
+    "vscode:prepublish": "npm run compile",
+    "compile": "tsc -p ./",
+    "watch": "tsc -watch -p ./",
+    "pretest": "npm run compile && npm run lint",
+    "lint": "eslint src --ext ts",
+    "test": "vscode-test"
+  },
+  "devDependencies": {
+    "@types/vscode": "^1.74.0",
+    "@types/mocha": "^10.0.6",
+    "@types/node": "18.x",
+    "@typescript-eslint/eslint-plugin": "^6.15.0",
+    "@typescript-eslint/parser": "^6.15.0",
+    "eslint": "^8.56.0",
+    "typescript": "^5.3.3",
+    "@vscode/test-cli": "^0.0.4",
+    "@vscode/test-electron": "^2.3.8"
+  },
+  "dependencies": {
+    "axios": "^1.6.2"
+  }
+}
