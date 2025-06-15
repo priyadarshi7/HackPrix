@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import { FiPlay, FiSave, FiShield, FiCpu, FiRefreshCw, FiCheck, FiClock, FiZap, FiDatabase } from 'react-icons/fi';
+import { Link } from 'react-router-dom';
 
 const CodeEditor = ({ sessionId, isLender }) => {
   const [code, setCode] = useState('# Write your Python code here\nimport numpy as np\nimport pandas as pd\n\n# Your code here\nprint("Hello from remote execution!")\n');
@@ -418,6 +419,11 @@ const CodeEditor = ({ sessionId, isLender }) => {
             <FiZap className="mr-1" />
             Optimized with pre-built base images for faster execution
           </span>
+          <Link to="/ideate">
+  <button className="px-6 py-3 bg-gradient-to-r from-purple-600 to-indigo-600 text-white text-sm md:text-base font-semibold rounded-2xl shadow-md hover:scale-105 hover:shadow-lg transition-all duration-300 ease-in-out">
+    💡 Want some ideas? Ideate
+  </button>
+</Link>
         </div>
       </div>
     </div>

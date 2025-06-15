@@ -366,7 +366,7 @@ Be precise and maintain the style and structure of the original code where possi
 
 # Initialize the assistant with API key from environment
 try:
-    groq_api_key = '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'
+    groq_api_key = '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'
     if not groq_api_key:
         raise ValueError("GROQ_API_KEY environment variable is not set")
     assistant = CodeAssistant(api_key=groq_api_key)

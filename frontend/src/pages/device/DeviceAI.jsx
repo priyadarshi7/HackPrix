@@ -33,7 +33,7 @@ const DeviceChatbot = () => {
   // API Configuration
   const API_BASE_URL = 'http://localhost:5000/api'; // Adjust to your backend URL
   const GROQ_API_URL = 'https://api.groq.com/openai/v1/chat/completions';
-  const GROQ_API_KEY = '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';
+  const GROQ_API_KEY = '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';
 
   const systemPrompt = `You are a helpful device rental assistant. Your job is to help users find suitable devices for rent based on their requirements.
 

@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import { FiCpu, FiHardDrive, FiServer, FiMonitor, FiFilter, FiSearch } from 'react-icons/fi';
+import { MapPin } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
 import DeviceChatbot from './DeviceAI';
 
@@ -166,16 +167,25 @@ const DeviceMarketplace = () => {
         <div className="absolute w-96 h-96 rounded-full bg-indigo-600/20 blur-3xl -bottom-20 -right-20"></div>
       </div> */}
       {/* Header */}
-      <header className="bg-gray-900 border-b border-gray-800 py-6 mt-16">
-        <div className="container mx-auto px-4">
-          <h1 className="text-3xl font-bold text-white">
-            <span className="text-indigo-500">Compute</span> Marketplace
-          </h1>
-          <p className="text-gray-400 mt-2">
-            Rent powerful computing devices from our community of providers
-          </p>
-        </div>
-      </header>
+            <header className="bg-gray-900 border-b border-gray-800 py-6 mt-16">
+              <div className="container mx-auto px-4">
+                <div className="flex items-center justify-between">
+                  <div>
+                    <h1 className="text-3xl font-bold text-white">
+                      <span className="text-indigo-500">Compute</span> Zone
+                    </h1>
+                    {/* <p className="text-gray-400 mt-2">Find computing devices with optimal latency</p> */}
+                  </div>
+                  <button
+                    onClick={() => navigate("/map")}
+                    className="flex items-center gap-2 bg-gray-800 hover:bg-gray-700 text-white font-medium py-2 px-4 rounded-lg transition"
+                  >
+                    <MapPin className="text-lg" />
+                    Map View
+                  </button>
+                </div>
+              </div>
+            </header>
 
       {/* Main Content */}
       <main className="container mx-auto px-4 py-8">

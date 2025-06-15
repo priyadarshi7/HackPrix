@@ -267,7 +267,7 @@ export const NavItems = ({ items, className, onItemClick }) => {
               {/* Blender Sub-dropdown */}
               <div className="absolute left-full top-0 ml-1 w-32 rounded-md bg-white shadow-lg dark:bg-neutral-900 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200">
                 <Link
-                  to="/dashboard/blender/lender"
+                  to="/blender-lender"
                   className="block px-3 py-2 text-xs text-neutral-700 hover:bg-gray-100 dark:text-neutral-300 dark:hover:bg-neutral-800"
                   onClick={() => setDropdownOpen(prev => ({ ...prev, resx: false }))}
                 >
@@ -492,7 +492,7 @@ export const MobileNavMenu = ({ children, className, isOpen, onClose }) => {
                   {mobileDropdownOpen.blender && (
                     <div className="ml-4 border-l border-neutral-200 pl-2 dark:border-neutral-700">
                       <Link
-                        to="/dashboard/blender/lender"
+                        to="/blender-lender"
                         className="block w-full px-4 py-2 text-xs font-medium text-neutral-700 hover:bg-neutral-100 dark:text-neutral-200 dark:hover:bg-neutral-800"
                         onClick={onClose}
                       >
